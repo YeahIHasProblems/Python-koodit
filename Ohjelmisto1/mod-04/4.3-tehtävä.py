@@ -1,12 +1,13 @@
-luku = input("Anna luku: ")
-lista = [luku]
-
-while luku != "":
-    luku = input("Anna luku: ")
-    lista.append(luku)
+suurin = 0
+pienin = 0
+luku = 0
+while True:
+    luku = input("Anna luku :")
     if luku == "":
-        lista.remove("")
-        print(f"Pienin luku: {min(lista)} Suurin luku: {max(lista)}")
-
-    
-    
+        break
+    luku = int(luku)
+    if (luku > suurin):
+        suurin = luku
+    if (luku < pienin):
+        pienin = luku
+print(f"Pienin luku on {pienin} ja suurin luku on {suurin}")
