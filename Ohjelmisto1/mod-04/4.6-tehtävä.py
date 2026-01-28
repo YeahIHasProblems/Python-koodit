@@ -12,4 +12,4 @@ while kerrat < pisteet:
     kerrat = kerrat + 1
 
 pi = 4 * numero / pisteet
-print(f"Piin likiarvo:{pi}")
+print(f"Piin likiarvo: {pi}")

@@ -6,5 +6,5 @@ lista = []
 for x in range(arpakuutiot):
     arpakuutio = random.randint(1,6)
     lista.append(arpakuutio)
-print(lista)
+
 print(sum(lista))
