@@ -11,7 +11,6 @@ def hae_maa(iso_country):
             print(f"Maa, jonka icao koodi on {iso_country} sijaitsee maassa {rivi[0]}. kyseinen maa sijaitsee maanosassa: {rivi[1]}")
     return
 
-# Pääohjelma
 yhteys = mysql.connector.connect(
          host='127.0.0.1',
          port= 3306,
