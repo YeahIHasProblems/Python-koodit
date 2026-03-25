@@ -1,9 +1,9 @@
 class Auto:
-    def __init__(self, rekisteritunnus,huippunopeus,tnopeus=0,matka=0):
+    def __init__(self, rekisteritunnus,huippunopeus):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
-        self.tnopeus = tnopeus
-        self.matka = matka
+        self.tnopeus = 0
+        self.matka = 0
 
 
 auto = Auto("ABC-123",120)
