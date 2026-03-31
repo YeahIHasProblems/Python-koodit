@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Testing JavaScript</title>
+</head>
+<body>
+<h1></h1>
+<p id="target"></p>
+<script>
+    'use strict';
+    let numero1 = Number(prompt('Give the first number.'));
+    let numero2 = Number(prompt('Give the second number.'));
+    let numero3 = Number(prompt('Give the third number.'));
+    let sum = numero1+numero2+numero3;
+    let product = numero1*numero2*numero3
+    let average = (numero1+numero2+numero3)/3
+    document.querySelector('#target').innerHTML ='The sum of the numbers is '+ sum+'\nThe product of the numbers is '+ product+' The average of the numbers is '+ average;
+</script>
+</body>
+</html>
