@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Testing JavaScript</title>
+</head>
+<body>
+<h1></h1>
+<p id="target"></p>
+<ul id="myList"></ul>
+<script>
+    'use strict';
+    const numbers = [];
+    while (true) {
+        const input = prompt("Give a number:");
+        const num = Number(input);
+        if (numbers.includes(num)) {
+            console.log("The number has been given alredy");
+            break;
+        }
+        numbers.push(num);
+    }
+    numbers.sort((a, b) => a - b);
+    for (const n of numbers) {
+        console.log(n);
+    }
+</script>
+</body>
+</html>

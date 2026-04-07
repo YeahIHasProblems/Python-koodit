@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Testing JavaScript</title>
+</head>
+<body>
+<h1></h1>
+<p id="target"></p>
+<ol id="myList"></ol>
+<script>
+    'use strict';
+    let participant = Number(prompt('How many participants?'));
+    const numbers = [];
+    for (let i = 0; i < participant; i++) {
+        const input = prompt('Enter name:');
+        numbers.push(input);
+        numbers.sort();
+    }
+    const list = document.getElementById("myList");
+
+    numbers.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    list.appendChild(li);
+    });
+
+</script>
+</body>
+</html>
