@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TV Search</title>
+</head>
+<body>
+
+  <h1>Search for a TV Show</h1>
+
+  <form id="searchForm">
+    <input id="query" name="q" type="text" placeholder="Enter show name">
+    <input type="submit" value="Search">
+  </form>
+
+  <script>
+    document.getElementById("searchForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const query = document.getElementById("query").value;
+    const url = `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        console.log("Search results:", data);
+        if (data.length > 0) {
+            console.log("First result:", data[0].show.name);
+        } else {
+            console.log("No results found");
+        }
+
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+});
+
+  </script>
+</body>
+</html>

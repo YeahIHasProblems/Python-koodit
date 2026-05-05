@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TV Search</title>
+</head>
+<body>
+
+  <h1>Search for a TV Show</h1>
+
+  <form id="searchForm">
+    <input id="query" type="text" placeholder="Enter show name">
+    <input type="submit" value="Search">
+  </form>
+
+  <div id="results"></div>
+
+  <script>
+    document.getElementById("searchForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const query = document.getElementById("query").value;
+    const url = `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`;
+
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = ""; // clear old results
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        console.log("Search result:", data);
+
+        data.forEach(tvShow => {
+            const show = tvShow.show;
+            const article = document.createElement("article");
+            const title = document.createElement("h2");
+            title.textContent = show.name;
+            article.appendChild(title);
+
+            const link = document.createElement("a");
+            link.href = show.url;
+            link.target = "_blank";
+            link.textContent = "View details";
+            article.appendChild(link);
+
+            const img = document.createElement("img");
+            img.src = show.image?.medium || "";
+            img.alt = show.name;
+            article.appendChild(img);
+
+            const summary = document.createElement("div");
+            summary.innerHTML = show.summary || "No summary available.";
+            article.appendChild(summary);
+            resultsDiv.appendChild(article);
+        });
+
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+});
+  </script>
+</body>
+</html>
